@@ -4,7 +4,9 @@ FileDescription=Migrador de tablas DBF (Visual FoxPro 9) hacia PostgreSQL
 InternalName=MigradorFoxPro
 OriginalFilename=MigradorFoxPro.exe
 ProductName=Migrador FoxPro
-ProductVersion=1.0.0
-FileVersion=1.0.0
+ProductVersion=2.0.0
+FileVersion=2.0.0
 Comments=Herramienta corporativa de migración de datos desarrollada por MACR Technologies
 LegalCopyright=© 2025 MACR Technologies. Todos los derechos reservados.
+
+En esta versión se permite escoger el esquema en el cual se importarán las tablas seleccionadas
