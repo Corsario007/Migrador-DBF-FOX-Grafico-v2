@@ -4,19 +4,31 @@ import psycopg2
 from dbfread import DBF
 from tqdm import tqdm
 import tkinter as tk
-from tkinter import filedialog, scrolledtext, messagebox, PhotoImage
+from tkinter import filedialog, scrolledtext, messagebox, PhotoImage, ttk
 import time
+import logging
+import csv
 
 # ==================================================
-# FUNCIÓN DE LOG EN ARCHIVO
+# CONFIGURACIÓN DE LOGGING
 # ==================================================
+logging.basicConfig(
+    filename="migracion.log",
+    level=logging.INFO,
+    format="%(asctime)s [%(levelname)s] %(message)s",
+    encoding="utf-8"
+)
+
 def write_log(message):
-    timestamp = time.strftime("[%Y-%m-%d %H:%M:%S] ")
-    with open("migracion.log", "a", encoding="utf-8") as f:
-        f.write(timestamp + message + "\n")
+    logging.info(message)
 
 # ==================================================
-# FUNCIÓN PARA SANITIZAR VALORES
+# VARIABLE DE CANCELACIÓN
+# ==================================================
+cancel_migration = threading.Event()
+
+# ==================================================
+# SANITIZAR VALORES
 # ==================================================
 def sanitize_value(val):
     if isinstance(val, bytes):
@@ -35,95 +47,96 @@ def sanitize_value(val):
         return str(val)
 
 # ==================================================
-# FUNCIÓN DE MIGRACIÓN
+# MIGRACIÓN DBF → POSTGRES
 # ==================================================
-def migrate_dbf_to_postgres(config, schema, folder, log_widget):
+def migrate_dbf_to_postgres(config, schema, folder, log_widget, progress_bar):
     try:
         conn = psycopg2.connect(**config)
         cur = conn.cursor()
 
-        # Crear el esquema si no existe
         cur.execute(f'CREATE SCHEMA IF NOT EXISTS "{schema}";')
         conn.commit()
 
-        msg = f"Conectado a la base {config['dbname']} en {config['host']} usando el esquema '{schema}'"
-        log_widget.insert(tk.END, msg + "\n\n")
-        write_log(msg)
+        dbf_files = [f for f in os.listdir(folder) if f.lower().endswith(".dbf")]
+        total_files = len(dbf_files)
+        progress_bar["maximum"] = total_files
 
-        msg = "🦊 Migrador FoxPro (.dbf) → PostgreSQL"
-        log_widget.insert(tk.END, msg + "\n\n")
-        write_log(msg)
+        log_widget.insert(tk.END, f"Conectado a {config['dbname']} en {config['host']} usando esquema '{schema}'\n\n")
+        write_log(f"Conectado a {config['dbname']} en {config['host']} usando esquema '{schema}'")
+        log_widget.insert(tk.END, "🦊 Migrador FoxPro (.dbf) → PostgreSQL\n\n")
+        write_log("🦊 Migrador FoxPro (.dbf) → PostgreSQL")
 
-        for file in os.listdir(folder):
-            if file.lower().endswith(".dbf"):
-                table_name = os.path.splitext(file)[0].lower()
-                full_table_name = f'"{schema}"."{table_name}"'
-                dbf_path = os.path.join(folder, file)
-
-                msg = f"➡ Migrando tabla: {table_name}"
+        for file in dbf_files:
+            if cancel_migration.is_set():
+                msg = "⚠️ Migración cancelada por el usuario."
                 log_widget.insert(tk.END, msg + "\n")
+                log_widget.see(tk.END)
+                write_log(msg)
+                break
+
+            table_name = os.path.splitext(file)[0].lower()
+            full_table_name = f'"{schema}"."{table_name}"'
+            dbf_path = os.path.join(folder, file)
+
+            log_widget.insert(tk.END, f"➡ Migrando tabla: {table_name}\n")
+            log_widget.see(tk.END)
+            log_widget.update()
+            write_log(f"Migrando tabla: {table_name}")
+
+            try:
+                dbf = DBF(dbf_path, encoding='latin1')
+
+                fields = []
+                for f in dbf.fields:
+                    ftype = "TEXT"
+                    if f.type == "N":
+                        ftype = "NUMERIC"
+                    elif f.type == "D":
+                        ftype = "DATE"
+                    elif f.type == "L":
+                        ftype = "BOOLEAN"
+                    fields.append(f'"{f.name.lower()}" {ftype}')
+
+                create_sql = f'CREATE TABLE IF NOT EXISTS {full_table_name} ({", ".join(fields)});'
+                cur.execute(create_sql)
+                conn.commit()
+
+                records_to_insert = []
+                for record in tqdm(dbf, desc=f"{table_name}", unit="reg"):
+                    sanitized_values = [sanitize_value(v) for v in record.values()]
+                    records_to_insert.append(sanitized_values)
+
+                cols = ', '.join(f'"{k.lower()}"' for k in dbf.field_names)
+                vals = ', '.join(["%s"] * len(dbf.field_names))
+                sql = f'INSERT INTO {full_table_name} ({cols}) VALUES ({vals})'
+
+                cur.executemany(sql, records_to_insert)
+                conn.commit()
+
+                msg = f"✔ {len(records_to_insert)} registros migrados en {table_name}"
+                log_widget.insert(tk.END, msg + "\n\n")
                 log_widget.see(tk.END)
                 log_widget.update()
                 write_log(msg)
 
-                try:
-                    dbf = DBF(dbf_path, encoding='latin1')
+            except Exception as e:
+                msg = f"❌ Error en {table_name}: {e}"
+                log_widget.insert(tk.END, msg + "\n\n")
+                log_widget.see(tk.END)
+                write_log(msg)
+                conn.rollback()
 
-                    # Crear tabla
-                    fields = []
-                    for f in dbf.fields:
-                        ftype = "TEXT"
-                        if f.type == "N":
-                            ftype = "NUMERIC"
-                        elif f.type == "D":
-                            ftype = "DATE"
-                        elif f.type == "L":
-                            ftype = "BOOLEAN"
-                        fields.append(f'"{f.name.lower()}" {ftype}')
-
-                    create_sql = f'CREATE TABLE IF NOT EXISTS {full_table_name} ({", ".join(fields)});'
-                    cur.execute(create_sql)
-                    conn.commit()
-
-                    # Insertar registros con validación
-                    count = 0
-                    for record in tqdm(dbf, desc=f"{table_name}", unit="reg"):
-                        try:
-                            cols = ', '.join(f'"{k.lower()}"' for k in record.keys())
-                            vals = ', '.join(["%s"] * len(record))
-                            sql = f'INSERT INTO {full_table_name} ({cols}) VALUES ({vals})'
-                            sanitized_values = [sanitize_value(v) for v in record.values()]
-                            cur.execute(sql, sanitized_values)
-                            count += 1
-                        except Exception as e:
-                            msg = f"❌ Error al insertar en {table_name}: {e}\nRegistro: {record}"
-                            log_widget.insert(tk.END, msg + "\n")
-                            log_widget.see(tk.END)
-                            log_widget.update()
-                            write_log(msg)
-                            conn.rollback()
-
-                    conn.commit()
-                    msg = f"✔ {count} registros migrados en {table_name}"
-                    log_widget.insert(tk.END, msg + "\n\n")
-                    log_widget.see(tk.END)
-                    log_widget.update()
-                    write_log(msg)
-
-                except Exception as e:
-                    msg = f"❌ Error en {table_name}: {e}"
-                    log_widget.insert(tk.END, msg + "\n\n")
-                    log_widget.see(tk.END)
-                    write_log(msg)
-                    conn.rollback()
+            progress_bar["value"] += 1
+            progress_bar.update()
 
         cur.close()
         conn.close()
-        msg = "✅ Migración completada exitosamente."
-        log_widget.insert(tk.END, msg + "\n")
-        log_widget.see(tk.END)
-        write_log(msg)
-        messagebox.showinfo("Completado", "Migración finalizada con éxito.")
+        if not cancel_migration.is_set():
+            msg = "✅ Migración completada exitosamente."
+            log_widget.insert(tk.END, msg + "\n")
+            log_widget.see(tk.END)
+            write_log(msg)
+            messagebox.showinfo("Completado", "Migración finalizada con éxito.")
 
     except Exception as e:
         msg = f"No se pudo conectar a PostgreSQL:\n{e}"
@@ -131,38 +144,44 @@ def migrate_dbf_to_postgres(config, schema, folder, log_widget):
         messagebox.showerror("Error de conexión", msg)
 
 # ==================================================
-# INTERFAZ TKINTER
+# INTERFAZ GRÁFICA
 # ==================================================
 def start_gui():
     root = tk.Tk()
     root.title("Migrador FoxPro → PostgreSQL")
-    root.geometry("960x540")
+    root.geometry("960x640")
     root.resizable(False, False)
 
-    # Campos de conexión
+    # Frame de conexión
     frame_conn = tk.LabelFrame(root, text="Conexión PostgreSQL", padx=10, pady=10)
-    frame_conn.pack(padx=10, pady=10, fill="x")
+    frame_conn.grid(row=0, column=0, padx=10, pady=10, sticky="ew")
+
+    for i in range(4):
+        frame_conn.columnconfigure(i, weight=1)
 
     tk.Label(frame_conn, text="Base de datos:").grid(row=0, column=0, sticky="w")
+    db_name = tk.Entry(frame_conn)
+    db_name.grid(row=0, column=1, sticky="ew")
+
     tk.Label(frame_conn, text="Usuario:").grid(row=1, column=0, sticky="w")
+    user = tk.Entry(frame_conn)
+    user.grid(row=1, column=1, sticky="ew")
+
     tk.Label(frame_conn, text="Contraseña:").grid(row=2, column=0, sticky="w")
+    password = tk.Entry(frame_conn, show="*")
+    password.grid(row=2, column=1, sticky="ew")
+
     tk.Label(frame_conn, text="Host:").grid(row=0, column=2, sticky="w")
+    host = tk.Entry(frame_conn)
+    host.grid(row=0, column=3, sticky="ew")
+
     tk.Label(frame_conn, text="Puerto:").grid(row=1, column=2, sticky="w")
+    port = tk.Entry(frame_conn)
+    port.grid(row=1, column=3, sticky="ew")
+
     tk.Label(frame_conn, text="Esquema:").grid(row=2, column=2, sticky="w")
-
-    db_name = tk.Entry(frame_conn, width=18)
-    user = tk.Entry(frame_conn, width=18)
-    password = tk.Entry(frame_conn, width=18, show="*")
-    host = tk.Entry(frame_conn, width=18)
-    port = tk.Entry(frame_conn, width=8)
-    schema = tk.Entry(frame_conn, width=18)
-
-    db_name.grid(row=0, column=1)
-    user.grid(row=1, column=1)
-    password.grid(row=2, column=1)
-    host.grid(row=0, column=3)
-    port.grid(row=1, column=3)
-    schema.grid(row=2, column=3)
+    schema = tk.Entry(frame_conn)
+    schema.grid(row=2, column=3, sticky="ew")
 
     db_name.insert(0, "postgres")
     user.insert(0, "postgres")
@@ -171,30 +190,38 @@ def start_gui():
     port.insert(0, "5432")
     schema.insert(0, "public")
 
-    # Selección de carpeta
+    # Frame de carpeta
     frame_folder = tk.LabelFrame(root, text="Carpeta de archivos DBF", padx=10, pady=10)
-    frame_folder.pack(padx=10, pady=5, fill="x")
+    frame_folder.grid(row=1, column=0, padx=10, pady=5, sticky="ew")
+    frame_folder.columnconfigure(0, weight=1)
 
     folder_path = tk.StringVar()
 
-    def choose_folder():
-        path = filedialog.askdirectory()
-        if path:
-            folder_path.set(path)
-
-    tk.Entry(frame_folder, textvariable=folder_path, width=55).pack(side="left", padx=5)
-    tk.Button(frame_folder, text="Seleccionar...", command=choose_folder).pack(side="left")
+    folder_entry = tk.Entry(frame_folder, textvariable=folder_path)
+    folder_entry.grid(row=0, column=0, sticky="ew", padx=5)
+    tk.Button(frame_folder, text="Seleccionar...", command=lambda: folder_path.set(filedialog.askdirectory())).grid(row=0, column=1, padx=5)
 
     # Área de log
-    log_widget = scrolledtext.ScrolledText(root, width=125, height=15, state="normal")
-    log_widget.pack(padx=10, pady=10)
+    log_widget = scrolledtext.ScrolledText(root, width=120, height=15)
+    log_widget.grid(row=2, column=0, padx=10, pady=10, sticky="nsew")
 
-    # Botón de migrar
+    # Barra de progreso
+    progress_frame = tk.Frame(root)
+    progress_frame.grid(row=3, column=0, padx=10, pady=5, sticky="ew")
+    tk.Label(progress_frame, text="Progreso:").pack(side="left", padx=5)
+    progress_bar = ttk.Progressbar(progress_frame, orient="horizontal", length=800, mode="determinate")
+    progress_bar.pack(side="left", padx=5, fill="x", expand=True)
+
+    # Botones de acción
+    action_frame = tk.Frame(root)
+    action_frame.grid(row=4, column=0, padx=10, pady=10, sticky="ew")
+
     def start_migration():
         if not folder_path.get():
             messagebox.showwarning("Advertencia", "Selecciona una carpeta con archivos DBF.")
             return
 
+        cancel_migration.clear()
         config = {
             "dbname": db_name.get(),
             "user": user.get(),
@@ -207,10 +234,42 @@ def start_gui():
         log_widget.insert(tk.END, "🚀 Iniciando migración...\n\n")
         log_widget.see(tk.END)
         write_log("🚀 Iniciando migración...")
-        threading.Thread(target=migrate_dbf_to_postgres, args=(config, schema_name, folder_path.get(), log_widget), daemon=True).start()
+        threading.Thread(
+            target=migrate_dbf_to_postgres,
+            args=(config, schema_name, folder_path.get(), log_widget, progress_bar),
+            daemon=True
+        ).start()
 
-    tk.Button(root, text="Iniciar Migración", command=start_migration, bg="#4CAF50", fg="white", padx=10, pady=5).pack(pady=10)
+    def clear_log():
+        log_widget.delete(1.0, tk.END)
 
+    def cancel_migration_action():
+        cancel_migration.set()
+        messagebox.showinfo("Cancelado", "La migración será detenida.")
+
+    def export_log_to_csv():
+        log_text = log_widget.get("1.0", tk.END).strip().split("\n")
+        if not log_text:
+            messagebox.showwarning("Vacío", "No hay mensajes para exportar.")
+            return
+        try:
+            with open("log_exportado.csv", "w", newline="", encoding="utf-8") as f:
+                writer = csv.writer(f)
+                writer.writerow(["Mensaje"])
+                for line in log_text:
+                    writer.writerow([line])
+            messagebox.showinfo("Exportado", "Log exportado como 'log_exportado.csv'.")
+        except Exception as e:
+            messagebox.showerror("Error", f"No se pudo exportar el log:\n{e}")
+
+    # Botones
+    tk.Button(action_frame, text="Iniciar Migración", command=start_migration, bg="#4CAF50", fg="white", padx=10, pady=5).pack(side="left", padx=5)
+    tk.Button(action_frame, text="Cancelar Migración", command=cancel_migration_action, bg="#FF9800", fg="white", padx=10, pady=5).pack(side="left", padx=5)
+    tk.Button(action_frame, text="Limpiar Log", command=clear_log, bg="#f44336", fg="white", padx=10, pady=5).pack(side="left", padx=5)
+    tk.Button(action_frame, text="Exportar Log a CSV", command=export_log_to_csv, bg="#2196F3", fg="white", padx=10, pady=5).pack(side="left", padx=5)
+
+    root.grid_rowconfigure(2, weight=1)
+    root.grid_columnconfigure(0, weight=1)
     root.mainloop()
 
 # ==================================================
@@ -223,7 +282,7 @@ def show_splash():
     splash.configure(bg="#2C3E50")
 
     try:
-        frame = tk.Frame(splash, bg="white", padx=20,pady=20)
+        frame = tk.Frame(splash, bg="white", padx=20, pady=20)
         frame.pack(expand=True)
 
         img = tk.PhotoImage(file="LogoApp.png")
