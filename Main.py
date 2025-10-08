@@ -30,21 +30,71 @@ cancel_migration = threading.Event()
 # ==================================================
 # SANITIZAR VALORES
 # ==================================================
-def sanitize_value(val):
+from datetime import datetime
+
+def sanitize_value(val, field_type=None):
     if isinstance(val, bytes):
+        # Detectar si son solo bytes nulos
+        if val == b'\x00' * len(val):
+            return None
         try:
             decoded = val.decode('latin1').strip()
+            if field_type == "N":
+                try:
+                    return float(decoded)
+                except ValueError:
+                    return None
+            elif field_type == "D":
+                try:
+                    return datetime.strptime(decoded, "%Y%m%d").date()
+                except ValueError:
+                    return None
+            elif field_type == "L":
+                return decoded.upper() in ("Y", "T")
             return decoded if decoded else None
-        except:
+        except Exception:
             return None
+
     elif isinstance(val, str):
-        return val.strip()
+        val = val.strip()
+        if field_type == "N":
+            try:
+                return float(val)
+            except ValueError:
+                return None
+        elif field_type == "D":
+            try:
+                return datetime.strptime(val, "%Y%m%d").date()
+            except ValueError:
+                return None
+        elif field_type == "L":
+            return val.upper() in ("Y", "T")
+        return val
+
     elif isinstance(val, (int, float, bool)):
         return val
+
     elif val is None:
         return None
+
     else:
-        return str(val)
+        try:
+            val_str = str(val).strip()
+            if field_type == "N":
+                try:
+                    return float(val_str)
+                except ValueError:
+                    return None
+            elif field_type == "D":
+                try:
+                    return datetime.strptime(val_str, "%Y%m%d").date()
+                except ValueError:
+                    return None
+            elif field_type == "L":
+                return val_str.upper() in ("Y", "T")
+            return val_str if val_str else None
+        except Exception:
+            return None
 
 # ==================================================
 # MIGRACIÓN DBF → POSTGRES
@@ -103,7 +153,9 @@ def migrate_dbf_to_postgres(config, schema, folder, log_widget, progress_bar):
 
                 records_to_insert = []
                 for record in tqdm(dbf, desc=f"{table_name}", unit="reg"):
-                    sanitized_values = [sanitize_value(v) for v in record.values()]
+                    sanitized_values = [
+                        sanitize_value(record[f.name], f.type) for f in dbf.fields
+                    ]
                     records_to_insert.append(sanitized_values)
 
                 cols = ', '.join(f'"{k.lower()}"' for k in dbf.field_names)
