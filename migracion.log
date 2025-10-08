@@ -6,3 +6,31 @@ invalid dsn: invalid connection option "schema"
 [2025-10-08 10:24:51] ❌ No se pudo conectar a PostgreSQL:
 invalid dsn: invalid connection option "schema"
 
+[2025-10-08 10:56:21] 🚀 Iniciando migración...
+[2025-10-08 10:56:21] 🦊 Migrador FoxPro (.dbf) → PostgreSQL
+[2025-10-08 10:56:21] Conectado a Prueba en localhost
+[2025-10-08 10:56:21] ➡ Migrando tabla: bpbancos
+[2025-10-08 10:56:21] ✔ 22 registros migrados en bpbancos
+[2025-10-08 10:56:21] ➡ Migrando tabla: bppagdir
+[2025-10-08 10:56:21] ✔ 498 registros migrados en bppagdir
+[2025-10-08 10:56:21] ➡ Migrando tabla: karcli
+[2025-10-08 10:56:21] ✔ 54 registros migrados en karcli
+[2025-10-08 10:56:21] ➡ Migrando tabla: repexe
+[2025-10-08 10:56:21] ✔ 49 registros migrados en repexe
+[2025-10-08 10:56:21] ➡ Migrando tabla: subcon
+[2025-10-08 10:56:21] ✔ 6 registros migrados en subcon
+[2025-10-08 10:56:21] ✅ Migración completada exitosamente.
+[2025-10-08 10:56:59] 🚀 Iniciando migración...
+[2025-10-08 10:56:59] 🦊 Migrador FoxPro (.dbf) → PostgreSQL
+[2025-10-08 10:56:59] Conectado a Prueba en localhost
+[2025-10-08 10:56:59] ➡ Migrando tabla: bpbancos
+[2025-10-08 10:56:59] ✔ 22 registros migrados en bpbancos
+[2025-10-08 10:56:59] ➡ Migrando tabla: bppagdir
+[2025-10-08 10:56:59] ✔ 498 registros migrados en bppagdir
+[2025-10-08 10:56:59] ➡ Migrando tabla: karcli
+[2025-10-08 10:56:59] ✔ 54 registros migrados en karcli
+[2025-10-08 10:56:59] ➡ Migrando tabla: repexe
+[2025-10-08 10:56:59] ✔ 49 registros migrados en repexe
+[2025-10-08 10:56:59] ➡ Migrando tabla: subcon
+[2025-10-08 10:56:59] ✔ 6 registros migrados en subcon
+[2025-10-08 10:56:59] ✅ Migración completada exitosamente.

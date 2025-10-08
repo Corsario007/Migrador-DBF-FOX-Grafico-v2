@@ -18,11 +18,10 @@ def write_log(message):
 # ==================================================
 # FUNCIÓN DE MIGRACIÓN
 # ==================================================
-def migrate_dbf_to_postgres(config, folder, log_widget):
+def migrate_dbf_to_postgres(config, schema, folder, log_widget):
     try:
         conn = psycopg2.connect(**config)
         cur = conn.cursor()
-        schema = config.get("schema", "public")
 
         # Crear el esquema si no existe
         cur.execute(f'CREATE SCHEMA IF NOT EXISTS "{schema}";')
@@ -173,14 +172,14 @@ def start_gui():
             "user": user.get(),
             "password": password.get(),
             "host": host.get(),
-            "port": port.get(),
-            "schema": schema.get()
+            "port": port.get()
         }
+        schema_name = schema.get()
 
         log_widget.insert(tk.END, "🚀 Iniciando migración...\n\n")
         log_widget.see(tk.END)
         write_log("🚀 Iniciando migración...")
-        threading.Thread(target=migrate_dbf_to_postgres, args=(config, folder_path.get(), log_widget), daemon=True).start()
+        threading.Thread(target=migrate_dbf_to_postgres, args=(config, schema_name, folder_path.get(), log_widget), daemon=True).start()
 
     tk.Button(root, text="Iniciar Migración", command=start_migration, bg="#4CAF50", fg="white", padx=10, pady=5).pack(pady=10)
 
