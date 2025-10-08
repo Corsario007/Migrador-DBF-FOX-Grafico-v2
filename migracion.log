@@ -1,0 +1,736 @@
+[2025-10-08 12:09:42] 🚀 Iniciando migración...
+[2025-10-08 12:09:42] 🦊 Migrador FoxPro (.dbf) → PostgreSQL
+[2025-10-08 12:09:42] Conectado a ERP en localhost
+[2025-10-08 12:09:42] ➡ Migrando tabla: anulados
+[2025-10-08 12:09:42] ✔ 12 registros migrados en anulados
+[2025-10-08 12:09:42] ➡ Migrando tabla: borrar
+[2025-10-08 12:09:42] ✔ 7 registros migrados en borrar
+[2025-10-08 12:09:42] ➡ Migrando tabla: bpbancos
+[2025-10-08 12:09:42] ✔ 4 registros migrados en bpbancos
+[2025-10-08 12:09:42] ➡ Migrando tabla: bpcabcon
+[2025-10-08 12:09:42] ✔ 811 registros migrados en bpcabcon
+[2025-10-08 12:09:42] ➡ Migrando tabla: bpcabliq
+[2025-10-08 12:09:42] ✔ 0 registros migrados en bpcabliq
+[2025-10-08 12:09:42] ➡ Migrando tabla: bpcabotr
+[2025-10-08 12:09:42] ✔ 23 registros migrados en bpcabotr
+[2025-10-08 12:09:42] ➡ Migrando tabla: bpcobros
+[2025-10-08 12:09:43] ✔ 3059 registros migrados en bpcobros
+[2025-10-08 12:09:43] ➡ Migrando tabla: bpcompro
+[2025-10-08 12:09:43] ✔ 732 registros migrados en bpcompro
+[2025-10-08 12:09:43] ➡ Migrando tabla: bpcontra
+[2025-10-08 12:09:43] ✔ 1390 registros migrados en bpcontra
+[2025-10-08 12:09:43] ➡ Migrando tabla: bpcontrl
+[2025-10-08 12:09:43] ✔ 1 registros migrados en bpcontrl
+[2025-10-08 12:09:43] ➡ Migrando tabla: bpdetcon
+[2025-10-08 12:09:47] ✔ 49135 registros migrados en bpdetcon
+[2025-10-08 12:09:47] ➡ Migrando tabla: bpdetdir
+[2025-10-08 12:09:47] ✔ 0 registros migrados en bpdetdir
+[2025-10-08 12:09:47] ➡ Migrando tabla: bpdetfon
+[2025-10-08 12:09:47] ✔ 2 registros migrados en bpdetfon
+[2025-10-08 12:09:47] ➡ Migrando tabla: bpdetliq
+[2025-10-08 12:09:47] ✔ 0 registros migrados en bpdetliq
+[2025-10-08 12:09:47] ➡ Migrando tabla: bpdetmov
+[2025-10-08 12:09:48] ✔ 16253 registros migrados en bpdetmov
+[2025-10-08 12:09:48] ➡ Migrando tabla: bpdetotr
+[2025-10-08 12:09:48] ✔ 24 registros migrados en bpdetotr
+[2025-10-08 12:09:48] ➡ Migrando tabla: bpdetret
+[2025-10-08 12:09:49] ✔ 16378 registros migrados en bpdetret
+[2025-10-08 12:09:49] ➡ Migrando tabla: bpdetter
+[2025-10-08 12:09:49] ✔ 5 registros migrados en bpdetter
+[2025-10-08 12:09:49] ➡ Migrando tabla: bpenvios
+[2025-10-08 12:09:49] ✔ 56 registros migrados en bpenvios
+[2025-10-08 12:09:49] ➡ Migrando tabla: bpfaccon
+[2025-10-08 12:09:49] ✔ 105 registros migrados en bpfaccon
+[2025-10-08 12:09:49] ➡ Migrando tabla: bpfacobr
+[2025-10-08 12:09:49] ✔ 174 registros migrados en bpfacobr
+[2025-10-08 12:09:49] ➡ Migrando tabla: bpfactur
+[2025-10-08 12:09:54] ✔ 19046 registros migrados en bpfactur
+[2025-10-08 12:09:54] ➡ Migrando tabla: bpmovimi
+[2025-10-08 12:10:00] ✔ 47115 registros migrados en bpmovimi
+[2025-10-08 12:10:00] ➡ Migrando tabla: bpotprov
+[2025-10-08 12:10:00] ✔ 83 registros migrados en bpotprov
+[2025-10-08 12:10:00] ➡ Migrando tabla: bppagdir
+[2025-10-08 12:10:00] ✔ 0 registros migrados en bppagdir
+[2025-10-08 12:10:00] ➡ Migrando tabla: bppercon
+[2025-10-08 12:10:00] ✔ 218 registros migrados en bppercon
+[2025-10-08 12:10:00] ➡ Migrando tabla: bpprovee
+[2025-10-08 12:10:01] ✔ 1747 registros migrados en bpprovee
+[2025-10-08 12:10:01] ➡ Migrando tabla: bpretenc
+[2025-10-08 12:10:01] ✔ 0 registros migrados en bpretenc
+[2025-10-08 12:10:01] ➡ Migrando tabla: bpretsri
+[2025-10-08 12:10:02] ✔ 12278 registros migrados en bpretsri
+[2025-10-08 12:10:02] ➡ Migrando tabla: bpretter
+[2025-10-08 12:10:02] ✔ 18 registros migrados en bpretter
+[2025-10-08 12:10:02] ➡ Migrando tabla: bprtcero
+[2025-10-08 12:10:02] ✔ 5756 registros migrados en bprtcero
+[2025-10-08 12:10:02] ➡ Migrando tabla: bpsubcon
+[2025-10-08 12:10:02] ✔ 75 registros migrados en bpsubcon
+[2025-10-08 12:10:02] ➡ Migrando tabla: cero
+[2025-10-08 12:10:02] ✔ 0 registros migrados en cero
+[2025-10-08 12:10:02] ➡ Migrando tabla: cgcabrep
+[2025-10-08 12:10:02] ✔ 0 registros migrados en cgcabrep
+[2025-10-08 12:10:02] ➡ Migrando tabla: cgcatalo
+[2025-10-08 12:10:02] ✔ 3193 registros migrados en cgcatalo
+[2025-10-08 12:10:02] ➡ Migrando tabla: cgcentro
+[2025-10-08 12:10:02] ✔ 940 registros migrados en cgcentro
+[2025-10-08 12:10:02] ➡ Migrando tabla: cgcompro
+[2025-10-08 12:10:11] ✔ 108060 registros migrados en cgcompro
+[2025-10-08 12:10:11] ➡ Migrando tabla: cgcontrl
+[2025-10-08 12:10:11] ✔ 1 registros migrados en cgcontrl
+[2025-10-08 12:10:11] ➡ Migrando tabla: cgctaaux
+[2025-10-08 12:10:11] ✔ 336 registros migrados en cgctaaux
+[2025-10-08 12:10:11] ➡ Migrando tabla: cgdetrep
+[2025-10-08 12:10:12] ✔ 0 registros migrados en cgdetrep
+[2025-10-08 12:10:12] ➡ Migrando tabla: cgdisrep
+[2025-10-08 12:10:12] ✔ 1419 registros migrados en cgdisrep
+[2025-10-08 12:10:12] ➡ Migrando tabla: cgrepmov
+[2025-10-08 12:10:12] ✔ 0 registros migrados en cgrepmov
+[2025-10-08 12:10:12] ➡ Migrando tabla: cgreposi
+[2025-10-08 12:10:12] ✔ 0 registros migrados en cgreposi
+[2025-10-08 12:10:12] ➡ Migrando tabla: cgreptit
+[2025-10-08 12:10:12] ✔ 1 registros migrados en cgreptit
+[2025-10-08 12:10:12] ➡ Migrando tabla: cgsalbac
+[2025-10-08 12:10:13] ✔ 12986 registros migrados en cgsalbac
+[2025-10-08 12:10:13] ➡ Migrando tabla: cgsaldos
+[2025-10-08 12:10:14] ✔ 32979 registros migrados en cgsaldos
+[2025-10-08 12:10:14] ➡ Migrando tabla: cgvalpag
+[2025-10-08 12:10:14] ✔ 0 registros migrados en cgvalpag
+[2025-10-08 12:10:14] ➡ Migrando tabla: creditos
+[2025-10-08 12:10:14] ✔ 0 registros migrados en creditos
+[2025-10-08 12:10:14] ➡ Migrando tabla: dbhiscod
+[2025-10-08 12:10:14] ✔ 0 registros migrados en dbhiscod
+[2025-10-08 12:10:14] ➡ Migrando tabla: fac_inmo
+[2025-10-08 12:10:14] ✔ 182 registros migrados en fac_inmo
+[2025-10-08 12:10:14] ➡ Migrando tabla: fac_marl
+[2025-10-08 12:10:15] ✔ 29 registros migrados en fac_marl
+[2025-10-08 12:10:15] ➡ Migrando tabla: fccheque
+[2025-10-08 12:10:15] ✔ 0 registros migrados en fccheque
+[2025-10-08 12:10:15] ➡ Migrando tabla: fcclient
+[2025-10-08 12:10:15] ✔ 112 registros migrados en fcclient
+[2025-10-08 12:10:15] ➡ Migrando tabla: fccontrl
+[2025-10-08 12:10:15] ✔ 1 registros migrados en fccontrl
+[2025-10-08 12:10:15] ➡ Migrando tabla: fcdetdoc
+[2025-10-08 12:10:34] ✔ 93771 registros migrados en fcdetdoc
+[2025-10-08 12:10:34] ➡ Migrando tabla: fcdetdocx
+[2025-10-08 12:10:41] ✔ 29511 registros migrados en fcdetdocx
+[2025-10-08 12:10:41] ➡ Migrando tabla: fcdochis
+[2025-10-08 12:10:41] ✔ 0 registros migrados en fcdochis
+[2025-10-08 12:10:41] ➡ Migrando tabla: fcdocume
+[2025-10-08 12:10:56] ✔ 78734 registros migrados en fcdocume
+[2025-10-08 12:10:56] ➡ Migrando tabla: fcmovhis
+[2025-10-08 12:10:56] ✔ 0 registros migrados en fcmovhis
+[2025-10-08 12:10:56] ➡ Migrando tabla: fcmovinv
+[2025-10-08 12:11:15] ✔ 129212 registros migrados en fcmovinv
+[2025-10-08 12:11:15] ➡ Migrando tabla: fcmovrem
+[2025-10-08 12:11:15] ✔ 711 registros migrados en fcmovrem
+[2025-10-08 12:11:15] ➡ Migrando tabla: fcproduc
+[2025-10-08 12:11:15] ✔ 199 registros migrados en fcproduc
+[2025-10-08 12:11:15] ➡ Migrando tabla: fcresvta
+[2025-10-08 12:11:17] ✔ 19776 registros migrados en fcresvta
+[2025-10-08 12:11:17] ➡ Migrando tabla: fcretcli
+[2025-10-08 12:11:28] ✔ 74066 registros migrados en fcretcli
+[2025-10-08 12:11:28] ➡ Migrando tabla: fcretclix
+[2025-10-08 12:11:31] ✔ 22928 registros migrados en fcretclix
+[2025-10-08 12:11:31] ➡ Migrando tabla: fcsalcli
+[2025-10-08 12:11:31] ✔ 1073 registros migrados en fcsalcli
+[2025-10-08 12:11:31] ➡ Migrando tabla: fctablas
+[2025-10-08 12:11:31] ✔ 152 registros migrados en fctablas
+[2025-10-08 12:11:31] ➡ Migrando tabla: fcvended
+[2025-10-08 12:11:31] ✔ 2 registros migrados en fcvended
+[2025-10-08 12:11:31] ➡ Migrando tabla: ir2007
+[2025-10-08 12:11:31] ✔ 114 registros migrados en ir2007
+[2025-10-08 12:11:31] ➡ Migrando tabla: ir2008
+[2025-10-08 12:11:31] ✔ 36 registros migrados en ir2008
+[2025-10-08 12:11:31] ➡ Migrando tabla: ir2009
+[2025-10-08 12:11:31] ✔ 30 registros migrados en ir2009
+[2025-10-08 12:11:31] ➡ Migrando tabla: ir2010
+[2025-10-08 12:11:31] ✔ 37 registros migrados en ir2010
+[2025-10-08 12:11:31] ➡ Migrando tabla: ir2012
+[2025-10-08 12:11:31] ✔ 28 registros migrados en ir2012
+[2025-10-08 12:11:31] ➡ Migrando tabla: karcli
+[2025-10-08 12:11:31] ✔ 70 registros migrados en karcli
+[2025-10-08 12:11:31] ➡ Migrando tabla: obr_inmo
+[2025-10-08 12:11:31] ✔ 3 registros migrados en obr_inmo
+[2025-10-08 12:11:31] ➡ Migrando tabla: repexe
+[2025-10-08 12:11:31] ✔ 1575 registros migrados en repexe
+[2025-10-08 12:11:31] ➡ Migrando tabla: repo
+[2025-10-08 12:11:32] ✔ 0 registros migrados en repo
+[2025-10-08 12:11:32] ➡ Migrando tabla: reporte
+[2025-10-08 12:11:32] ✔ 4 registros migrados en reporte
+[2025-10-08 12:11:32] ➡ Migrando tabla: resfac
+[2025-10-08 12:11:32] ✔ 1751 registros migrados en resfac
+[2025-10-08 12:11:32] ➡ Migrando tabla: res_fac
+[2025-10-08 12:11:32] ✔ 1759 registros migrados en res_fac
+[2025-10-08 12:11:32] ➡ Migrando tabla: rfcontrl
+[2025-10-08 12:11:32] ✔ 1 registros migrados en rfcontrl
+[2025-10-08 12:11:32] ➡ Migrando tabla: rffactur
+[2025-10-08 12:11:33] ✔ 3899 registros migrados en rffactur
+[2025-10-08 12:11:33] ➡ Migrando tabla: rfobras
+[2025-10-08 12:11:33] ✔ 100 registros migrados en rfobras
+[2025-10-08 12:11:33] ➡ Migrando tabla: rfprovee
+[2025-10-08 12:11:33] ✔ 1051 registros migrados en rfprovee
+[2025-10-08 12:11:33] ➡ Migrando tabla: rpcontrl
+[2025-10-08 12:11:33] ✔ 1 registros migrados en rpcontrl
+[2025-10-08 12:11:33] ➡ Migrando tabla: rpemplea
+[2025-10-08 12:11:33] ✔ 0 registros migrados en rpemplea
+[2025-10-08 12:11:33] ➡ Migrando tabla: rpempxml
+[2025-10-08 12:11:33] ✔ 0 registros migrados en rpempxml
+[2025-10-08 12:11:33] ➡ Migrando tabla: rpenlcon
+[2025-10-08 12:11:33] ✔ 2 registros migrados en rpenlcon
+[2025-10-08 12:11:33] ➡ Migrando tabla: rpfichas
+[2025-10-08 12:11:33] ✔ 158 registros migrados en rpfichas
+[2025-10-08 12:11:33] ➡ Migrando tabla: rpimpues
+[2025-10-08 12:11:33] ✔ 0 registros migrados en rpimpues
+[2025-10-08 12:11:33] ➡ Migrando tabla: subcon
+[2025-10-08 12:11:33] ✔ 0 registros migrados en subcon
+[2025-10-08 12:11:33] ➡ Migrando tabla: tempo
+[2025-10-08 12:11:33] ✔ 0 registros migrados en tempo
+[2025-10-08 12:11:33] ➡ Migrando tabla: trans
+[2025-10-08 12:11:33] ✔ 366 registros migrados en trans
+[2025-10-08 12:11:33] ➡ Migrando tabla: uacontrl
+[2025-10-08 12:11:33] ✔ 1 registros migrados en uacontrl
+[2025-10-08 12:11:33] ➡ Migrando tabla: uafactur
+[2025-10-08 12:11:33] ✔ 1 registros migrados en uafactur
+[2025-10-08 12:11:33] ✅ Migración completada exitosamente.
+[2025-10-08 12:14:47] 🚀 Iniciando migración...
+[2025-10-08 12:14:47] 🦊 Migrador FoxPro (.dbf) → PostgreSQL
+[2025-10-08 12:14:47] Conectado a ERP en localhost
+[2025-10-08 12:14:47] ➡ Migrando tabla: bpbancos
+[2025-10-08 12:14:47] ✔ 1 registros migrados en bpbancos
+[2025-10-08 12:14:47] ➡ Migrando tabla: bpcabcon
+[2025-10-08 12:14:47] ✔ 0 registros migrados en bpcabcon
+[2025-10-08 12:14:47] ➡ Migrando tabla: bpcabliq
+[2025-10-08 12:14:47] ✔ 0 registros migrados en bpcabliq
+[2025-10-08 12:14:47] ➡ Migrando tabla: bpcabotr
+[2025-10-08 12:14:47] ✔ 0 registros migrados en bpcabotr
+[2025-10-08 12:14:47] ➡ Migrando tabla: bpcobros
+[2025-10-08 12:14:47] ✔ 0 registros migrados en bpcobros
+[2025-10-08 12:14:47] ➡ Migrando tabla: bpcompro
+[2025-10-08 12:14:47] ✔ 0 registros migrados en bpcompro
+[2025-10-08 12:14:47] ➡ Migrando tabla: bpcontra
+[2025-10-08 12:14:47] ✔ 0 registros migrados en bpcontra
+[2025-10-08 12:14:47] ➡ Migrando tabla: bpcontrl
+[2025-10-08 12:14:47] ✔ 1 registros migrados en bpcontrl
+[2025-10-08 12:14:47] ➡ Migrando tabla: bpdetcon
+[2025-10-08 12:14:47] ✔ 0 registros migrados en bpdetcon
+[2025-10-08 12:14:47] ➡ Migrando tabla: bpdetdir
+[2025-10-08 12:14:47] ✔ 0 registros migrados en bpdetdir
+[2025-10-08 12:14:47] ➡ Migrando tabla: bpdetfon
+[2025-10-08 12:14:47] ✔ 0 registros migrados en bpdetfon
+[2025-10-08 12:14:47] ➡ Migrando tabla: bpdetliq
+[2025-10-08 12:14:47] ✔ 0 registros migrados en bpdetliq
+[2025-10-08 12:14:47] ➡ Migrando tabla: bpdetotr
+[2025-10-08 12:14:47] ✔ 0 registros migrados en bpdetotr
+[2025-10-08 12:14:47] ➡ Migrando tabla: bpdetret
+[2025-10-08 12:14:47] ✔ 0 registros migrados en bpdetret
+[2025-10-08 12:14:47] ➡ Migrando tabla: bpdetter
+[2025-10-08 12:14:47] ✔ 0 registros migrados en bpdetter
+[2025-10-08 12:14:47] ➡ Migrando tabla: bpenvios
+[2025-10-08 12:14:47] ✔ 0 registros migrados en bpenvios
+[2025-10-08 12:14:47] ➡ Migrando tabla: bpfaccon
+[2025-10-08 12:14:47] ✔ 0 registros migrados en bpfaccon
+[2025-10-08 12:14:47] ➡ Migrando tabla: bpfacobr
+[2025-10-08 12:14:47] ✔ 0 registros migrados en bpfacobr
+[2025-10-08 12:14:47] ➡ Migrando tabla: bpfactur
+[2025-10-08 12:14:47] ✔ 0 registros migrados en bpfactur
+[2025-10-08 12:14:47] ➡ Migrando tabla: bpmovimi
+[2025-10-08 12:14:47] ✔ 0 registros migrados en bpmovimi
+[2025-10-08 12:14:47] ➡ Migrando tabla: bpotprov
+[2025-10-08 12:14:47] ✔ 0 registros migrados en bpotprov
+[2025-10-08 12:14:47] ➡ Migrando tabla: bppagdir
+[2025-10-08 12:14:47] ✔ 0 registros migrados en bppagdir
+[2025-10-08 12:14:47] ➡ Migrando tabla: bppercon
+[2025-10-08 12:14:47] ✔ 1379 registros migrados en bppercon
+[2025-10-08 12:14:47] ➡ Migrando tabla: bpprovee
+[2025-10-08 12:14:48] ✔ 6525 registros migrados en bpprovee
+[2025-10-08 12:14:48] ➡ Migrando tabla: bpretsri
+[2025-10-08 12:14:48] ✔ 0 registros migrados en bpretsri
+[2025-10-08 12:14:48] ➡ Migrando tabla: bpretter
+[2025-10-08 12:14:48] ✔ 0 registros migrados en bpretter
+[2025-10-08 12:14:48] ➡ Migrando tabla: bprtcero
+[2025-10-08 12:14:48] ✔ 0 registros migrados en bprtcero
+[2025-10-08 12:14:48] ➡ Migrando tabla: bpsubcon
+[2025-10-08 12:14:48] ✔ 0 registros migrados en bpsubcon
+[2025-10-08 12:14:48] ➡ Migrando tabla: cgcabrep
+[2025-10-08 12:14:48] ✔ 0 registros migrados en cgcabrep
+[2025-10-08 12:14:48] ➡ Migrando tabla: cgcatalo
+[2025-10-08 12:14:49] ✔ 10735 registros migrados en cgcatalo
+[2025-10-08 12:14:49] ➡ Migrando tabla: cgcentro
+[2025-10-08 12:14:49] ✔ 0 registros migrados en cgcentro
+[2025-10-08 12:14:49] ➡ Migrando tabla: cgcompro
+[2025-10-08 12:14:49] ✔ 0 registros migrados en cgcompro
+[2025-10-08 12:14:49] ➡ Migrando tabla: cgcontrl
+[2025-10-08 12:14:49] ✔ 1 registros migrados en cgcontrl
+[2025-10-08 12:14:49] ➡ Migrando tabla: cgctaaux
+[2025-10-08 12:14:49] ✔ 4850 registros migrados en cgctaaux
+[2025-10-08 12:14:49] ➡ Migrando tabla: cgdetrep
+[2025-10-08 12:14:49] ✔ 0 registros migrados en cgdetrep
+[2025-10-08 12:14:49] ➡ Migrando tabla: cgdisrep
+[2025-10-08 12:14:49] ✔ 0 registros migrados en cgdisrep
+[2025-10-08 12:14:49] ➡ Migrando tabla: cgrepmov
+[2025-10-08 12:14:49] ✔ 0 registros migrados en cgrepmov
+[2025-10-08 12:14:49] ➡ Migrando tabla: cgreposi
+[2025-10-08 12:14:49] ✔ 0 registros migrados en cgreposi
+[2025-10-08 12:14:49] ➡ Migrando tabla: cgreptit
+[2025-10-08 12:14:49] ✔ 0 registros migrados en cgreptit
+[2025-10-08 12:14:49] ➡ Migrando tabla: cgsaldos
+[2025-10-08 12:14:49] ✔ 0 registros migrados en cgsaldos
+[2025-10-08 12:14:49] ➡ Migrando tabla: cgvalpag
+[2025-10-08 12:14:49] ✔ 0 registros migrados en cgvalpag
+[2025-10-08 12:14:49] ➡ Migrando tabla: fccheque
+[2025-10-08 12:14:49] ✔ 0 registros migrados en fccheque
+[2025-10-08 12:14:49] ➡ Migrando tabla: fcclient
+[2025-10-08 12:14:49] ✔ 0 registros migrados en fcclient
+[2025-10-08 12:14:49] ➡ Migrando tabla: fccontrl
+[2025-10-08 12:14:49] ✔ 1 registros migrados en fccontrl
+[2025-10-08 12:14:49] ➡ Migrando tabla: fcdetdoc
+[2025-10-08 12:14:49] ✔ 0 registros migrados en fcdetdoc
+[2025-10-08 12:14:49] ➡ Migrando tabla: fcdochis
+[2025-10-08 12:14:49] ✔ 0 registros migrados en fcdochis
+[2025-10-08 12:14:49] ➡ Migrando tabla: fcdocume
+[2025-10-08 12:14:49] ✔ 0 registros migrados en fcdocume
+[2025-10-08 12:14:49] ➡ Migrando tabla: fcmovhis
+[2025-10-08 12:14:49] ✔ 0 registros migrados en fcmovhis
+[2025-10-08 12:14:49] ➡ Migrando tabla: fcmovinv
+[2025-10-08 12:14:49] ✔ 0 registros migrados en fcmovinv
+[2025-10-08 12:14:49] ➡ Migrando tabla: fcmovrem
+[2025-10-08 12:14:49] ✔ 0 registros migrados en fcmovrem
+[2025-10-08 12:14:49] ➡ Migrando tabla: fcproduc
+[2025-10-08 12:14:49] ✔ 0 registros migrados en fcproduc
+[2025-10-08 12:14:49] ➡ Migrando tabla: fcresvta
+[2025-10-08 12:14:49] ✔ 0 registros migrados en fcresvta
+[2025-10-08 12:14:49] ➡ Migrando tabla: fcretcli
+[2025-10-08 12:14:49] ✔ 0 registros migrados en fcretcli
+[2025-10-08 12:14:49] ➡ Migrando tabla: fcsalcli
+[2025-10-08 12:14:49] ✔ 0 registros migrados en fcsalcli
+[2025-10-08 12:14:49] ➡ Migrando tabla: fctablas
+[2025-10-08 12:14:49] ✔ 0 registros migrados en fctablas
+[2025-10-08 12:14:49] ➡ Migrando tabla: fcvended
+[2025-10-08 12:14:49] ✔ 0 registros migrados en fcvended
+[2025-10-08 12:14:49] ➡ Migrando tabla: rfcontrl
+[2025-10-08 12:14:49] ✔ 1 registros migrados en rfcontrl
+[2025-10-08 12:14:49] ➡ Migrando tabla: rffactur
+[2025-10-08 12:14:49] ✔ 0 registros migrados en rffactur
+[2025-10-08 12:14:49] ➡ Migrando tabla: rfobras
+[2025-10-08 12:14:49] ✔ 0 registros migrados en rfobras
+[2025-10-08 12:14:49] ➡ Migrando tabla: rfprovee
+[2025-10-08 12:14:49] ✔ 0 registros migrados en rfprovee
+[2025-10-08 12:14:49] ➡ Migrando tabla: rpcontrl
+[2025-10-08 12:14:49] ✔ 1 registros migrados en rpcontrl
+[2025-10-08 12:14:49] ➡ Migrando tabla: rpemplea
+[2025-10-08 12:14:49] ✔ 0 registros migrados en rpemplea
+[2025-10-08 12:14:49] ➡ Migrando tabla: rpempxml
+[2025-10-08 12:14:49] ✔ 0 registros migrados en rpempxml
+[2025-10-08 12:14:49] ➡ Migrando tabla: rpenlcon
+[2025-10-08 12:14:49] ✔ 0 registros migrados en rpenlcon
+[2025-10-08 12:14:49] ➡ Migrando tabla: rpfichas
+[2025-10-08 12:14:49] ✔ 0 registros migrados en rpfichas
+[2025-10-08 12:14:49] ➡ Migrando tabla: rpimpues
+[2025-10-08 12:14:49] ✔ 0 registros migrados en rpimpues
+[2025-10-08 12:14:49] ➡ Migrando tabla: uacontrl
+[2025-10-08 12:14:49] ✔ 0 registros migrados en uacontrl
+[2025-10-08 12:14:49] ➡ Migrando tabla: uafactur
+[2025-10-08 12:14:49] ✔ 0 registros migrados en uafactur
+[2025-10-08 12:14:49] ✅ Migración completada exitosamente.
+[2025-10-08 12:16:48] 🚀 Iniciando migración...
+[2025-10-08 12:16:48] 🦊 Migrador FoxPro (.dbf) → PostgreSQL
+[2025-10-08 12:16:48] Conectado a ERP en localhost
+[2025-10-08 12:16:48] ➡ Migrando tabla: borrar
+[2025-10-08 12:16:48] ✔ 1 registros migrados en borrar
+[2025-10-08 12:16:48] ➡ Migrando tabla: bpbancos
+[2025-10-08 12:16:48] ✔ 22 registros migrados en bpbancos
+[2025-10-08 12:16:48] ➡ Migrando tabla: bpcabcon
+[2025-10-08 12:16:49] ✔ 3700 registros migrados en bpcabcon
+[2025-10-08 12:16:49] ➡ Migrando tabla: bpcabliq
+[2025-10-08 12:16:49] ✔ 2 registros migrados en bpcabliq
+[2025-10-08 12:16:49] ➡ Migrando tabla: bpcabotr
+[2025-10-08 12:16:49] ✔ 4775 registros migrados en bpcabotr
+[2025-10-08 12:16:49] ➡ Migrando tabla: bpcobros
+[2025-10-08 12:16:49] ✔ 2086 registros migrados en bpcobros
+[2025-10-08 12:16:49] ➡ Migrando tabla: bpcompro
+[2025-10-08 12:17:04] ✔ 212055 registros migrados en bpcompro
+[2025-10-08 12:17:04] ➡ Migrando tabla: bpcontra
+[2025-10-08 12:17:04] ✔ 1133 registros migrados en bpcontra
+[2025-10-08 12:17:04] ➡ Migrando tabla: bpcontrl
+[2025-10-08 12:17:04] ✔ 1 registros migrados en bpcontrl
+[2025-10-08 12:17:04] ➡ Migrando tabla: bpdetcon
+[2025-10-08 12:18:01] ✔ 679844 registros migrados en bpdetcon
+[2025-10-08 12:18:01] ➡ Migrando tabla: bpdetdir
+[2025-10-08 12:18:02] ✔ 1696 registros migrados en bpdetdir
+[2025-10-08 12:18:02] ➡ Migrando tabla: bpdetfon
+[2025-10-08 12:18:02] ✔ 6857 registros migrados en bpdetfon
+[2025-10-08 12:18:02] ➡ Migrando tabla: bpdetliq
+[2025-10-08 12:18:02] ✔ 2 registros migrados en bpdetliq
+[2025-10-08 12:18:02] ➡ Migrando tabla: bpdetmov
+[2025-10-08 12:18:10] ❌ Error en bpdetmov: could not convert string to float: b'\x00\x00\x00\x00\x00\x00'
+[2025-10-08 12:18:10] ➡ Migrando tabla: bpdetotr
+[2025-10-08 12:18:10] ✔ 5885 registros migrados en bpdetotr
+[2025-10-08 12:18:10] ➡ Migrando tabla: bpdetret
+[2025-10-08 12:18:59] ✔ 573412 registros migrados en bpdetret
+[2025-10-08 12:18:59] ➡ Migrando tabla: bpdetter
+[2025-10-08 12:19:05] ✔ 70814 registros migrados en bpdetter
+[2025-10-08 12:19:05] ➡ Migrando tabla: bpenvios
+[2025-10-08 12:19:05] ✔ 1406 registros migrados en bpenvios
+[2025-10-08 12:19:05] ➡ Migrando tabla: bpfaccon
+[2025-10-08 12:19:27] ✔ 91281 registros migrados en bpfaccon
+[2025-10-08 12:19:27] ➡ Migrando tabla: bpfacobr
+[2025-10-08 12:19:31] ✔ 32821 registros migrados en bpfacobr
+[2025-10-08 12:19:31] ➡ Migrando tabla: bpfactur
+[2025-10-08 12:21:00] ✔ 358282 registros migrados en bpfactur
+[2025-10-08 12:21:00] ➡ Migrando tabla: bpmovimi
+[2025-10-08 12:22:23] ✔ 565661 registros migrados en bpmovimi
+[2025-10-08 12:22:23] ➡ Migrando tabla: bpotprov
+[2025-10-08 12:22:24] ✔ 28314 registros migrados en bpotprov
+[2025-10-08 12:22:24] ➡ Migrando tabla: bppagdir
+[2025-10-08 12:22:24] ✔ 498 registros migrados en bppagdir
+[2025-10-08 12:22:24] ➡ Migrando tabla: bppercon
+[2025-10-08 12:22:24] ✔ 1651 registros migrados en bppercon
+[2025-10-08 12:22:24] ➡ Migrando tabla: bpprovee
+[2025-10-08 12:22:25] ✔ 6926 registros migrados en bpprovee
+[2025-10-08 12:22:25] ➡ Migrando tabla: bpretenc
+[2025-10-08 12:22:25] ✔ 0 registros migrados en bpretenc
+[2025-10-08 12:22:25] ➡ Migrando tabla: bpretsri
+[2025-10-08 12:22:52] ✔ 308108 registros migrados en bpretsri
+[2025-10-08 12:22:52] ➡ Migrando tabla: bpretter
+[2025-10-08 12:22:58] ✔ 70129 registros migrados en bpretter
+[2025-10-08 12:22:58] ➡ Migrando tabla: bprtcero
+[2025-10-08 12:23:01] ✔ 57442 registros migrados en bprtcero
+[2025-10-08 12:23:01] ➡ Migrando tabla: bpsubcon
+[2025-10-08 12:23:05] ✔ 27580 registros migrados en bpsubcon
+[2025-10-08 12:23:05] ➡ Migrando tabla: cero
+[2025-10-08 12:23:05] ✔ 120 registros migrados en cero
+[2025-10-08 12:23:05] ➡ Migrando tabla: cgcabrep
+[2025-10-08 12:23:08] ✔ 30248 registros migrados en cgcabrep
+[2025-10-08 12:23:08] ➡ Migrando tabla: cgcabrepx
+[2025-10-08 12:23:09] ✔ 10798 registros migrados en cgcabrepx
+[2025-10-08 12:23:09] ➡ Migrando tabla: cgcatalo
+[2025-10-08 12:23:10] ✔ 12068 registros migrados en cgcatalo
+[2025-10-08 12:23:10] ➡ Migrando tabla: cgcentro
+[2025-10-08 12:23:14] ✔ 79525 registros migrados en cgcentro
+[2025-10-08 12:23:14] ➡ Migrando tabla: cgcompro
+[2025-10-08 12:24:51] ✔ 1081060 registros migrados en cgcompro
+[2025-10-08 12:24:51] ➡ Migrando tabla: cgcontrl
+[2025-10-08 12:24:51] ✔ 1 registros migrados en cgcontrl
+[2025-10-08 12:24:51] ➡ Migrando tabla: cgctaaux
+[2025-10-08 12:24:51] ✔ 5391 registros migrados en cgctaaux
+[2025-10-08 12:24:51] ➡ Migrando tabla: cgdetrep
+[2025-10-08 12:25:26] ✔ 425495 registros migrados en cgdetrep
+[2025-10-08 12:25:26] ➡ Migrando tabla: cgdisrep
+[2025-10-08 12:25:26] ✔ 1802 registros migrados en cgdisrep
+[2025-10-08 12:25:26] ➡ Migrando tabla: cgrepmov
+[2025-10-08 12:25:34] ✔ 91719 registros migrados en cgrepmov
+[2025-10-08 12:25:34] ➡ Migrando tabla: cgreposi
+[2025-10-08 12:25:34] ✔ 2111 registros migrados en cgreposi
+[2025-10-08 12:25:34] ➡ Migrando tabla: cgreptit
+[2025-10-08 12:25:35] ✔ 8133 registros migrados en cgreptit
+[2025-10-08 12:25:35] ➡ Migrando tabla: cgsaldos
+[2025-10-08 12:25:56] ✔ 343564 registros migrados en cgsaldos
+[2025-10-08 12:25:56] ➡ Migrando tabla: cgvalpag
+[2025-10-08 12:25:56] ✔ 323 registros migrados en cgvalpag
+[2025-10-08 12:25:56] ➡ Migrando tabla: copiar
+[2025-10-08 12:25:56] ✔ 31 registros migrados en copiar
+[2025-10-08 12:25:56] ➡ Migrando tabla: creditos
+[2025-10-08 12:25:56] ✔ 0 registros migrados en creditos
+[2025-10-08 12:25:56] ➡ Migrando tabla: dbhiscod
+[2025-10-08 12:25:56] ✔ 6 registros migrados en dbhiscod
+[2025-10-08 12:25:56] ➡ Migrando tabla: debitos
+[2025-10-08 12:25:56] ✔ 283 registros migrados en debitos
+[2025-10-08 12:25:56] ➡ Migrando tabla: fac_alra
+[2025-10-08 12:25:56] ✔ 44 registros migrados en fac_alra
+[2025-10-08 12:25:56] ➡ Migrando tabla: faltan
+[2025-10-08 12:25:56] ✔ 39 registros migrados en faltan
+[2025-10-08 12:25:56] ➡ Migrando tabla: fccheque
+[2025-10-08 12:25:56] ✔ 0 registros migrados en fccheque
+[2025-10-08 12:25:56] ➡ Migrando tabla: fcclient
+[2025-10-08 12:25:56] ✔ 524 registros migrados en fcclient
+[2025-10-08 12:25:56] ➡ Migrando tabla: fccontrl
+[2025-10-08 12:25:57] ✔ 1 registros migrados en fccontrl
+[2025-10-08 12:25:57] ➡ Migrando tabla: fcdetdoc
+[2025-10-08 12:26:08] ✔ 69555 registros migrados en fcdetdoc
+[2025-10-08 12:26:08] ➡ Migrando tabla: fcdochis
+[2025-10-08 12:26:08] ✔ 0 registros migrados en fcdochis
+[2025-10-08 12:26:08] ➡ Migrando tabla: fcdocume
+[2025-10-08 12:26:23] ✔ 80306 registros migrados en fcdocume
+[2025-10-08 12:26:23] ➡ Migrando tabla: fcmovhis
+[2025-10-08 12:26:23] ✔ 0 registros migrados en fcmovhis
+[2025-10-08 12:26:23] ➡ Migrando tabla: fcmovinv
+[2025-10-08 12:26:27] ✔ 44329 registros migrados en fcmovinv
+[2025-10-08 12:26:27] ➡ Migrando tabla: fcmovrem
+[2025-10-08 12:26:33] ✔ 47334 registros migrados en fcmovrem
+[2025-10-08 12:26:33] ➡ Migrando tabla: fcproduc
+[2025-10-08 12:26:33] ✔ 62 registros migrados en fcproduc
+[2025-10-08 12:26:33] ➡ Migrando tabla: fcresvta
+[2025-10-08 12:26:33] ✔ 4238 registros migrados en fcresvta
+[2025-10-08 12:26:33] ➡ Migrando tabla: fcretcli
+[2025-10-08 12:26:36] ✔ 28166 registros migrados en fcretcli
+[2025-10-08 12:26:36] ➡ Migrando tabla: fcsalcli
+[2025-10-08 12:26:36] ✔ 6027 registros migrados en fcsalcli
+[2025-10-08 12:26:36] ➡ Migrando tabla: fctablas
+[2025-10-08 12:26:36] ✔ 248 registros migrados en fctablas
+[2025-10-08 12:26:36] ➡ Migrando tabla: fcvended
+[2025-10-08 12:26:36] ✔ 11 registros migrados en fcvended
+[2025-10-08 12:26:36] ➡ Migrando tabla: ir2007
+[2025-10-08 12:26:36] ✔ 3957 registros migrados en ir2007
+[2025-10-08 12:26:36] ➡ Migrando tabla: ir2008
+[2025-10-08 12:26:37] ✔ 2143 registros migrados en ir2008
+[2025-10-08 12:26:37] ➡ Migrando tabla: ir2008ba
+[2025-10-08 12:26:37] ✔ 2144 registros migrados en ir2008ba
+[2025-10-08 12:26:37] ➡ Migrando tabla: ir2009
+[2025-10-08 12:26:37] ✔ 1534 registros migrados en ir2009
+[2025-10-08 12:26:37] ➡ Migrando tabla: ir2010
+[2025-10-08 12:26:38] ✔ 2847 registros migrados en ir2010
+[2025-10-08 12:26:38] ➡ Migrando tabla: ir2010b
+[2025-10-08 12:26:38] ✔ 2847 registros migrados en ir2010b
+[2025-10-08 12:26:38] ➡ Migrando tabla: ir2010bc
+[2025-10-08 12:26:38] ✔ 2699 registros migrados en ir2010bc
+[2025-10-08 12:26:38] ➡ Migrando tabla: ir2010c
+[2025-10-08 12:26:39] ✔ 2847 registros migrados en ir2010c
+[2025-10-08 12:26:39] ➡ Migrando tabla: ir2010d
+[2025-10-08 12:26:40] ✔ 2847 registros migrados en ir2010d
+[2025-10-08 12:26:40] ➡ Migrando tabla: ir2011
+[2025-10-08 12:26:40] ✔ 2868 registros migrados en ir2011
+[2025-10-08 12:26:40] ➡ Migrando tabla: ir2012
+[2025-10-08 12:26:40] ✔ 2903 registros migrados en ir2012
+[2025-10-08 12:26:40] ➡ Migrando tabla: ir2013
+[2025-10-08 12:26:41] ✔ 3118 registros migrados en ir2013
+[2025-10-08 12:26:41] ➡ Migrando tabla: ir2014
+[2025-10-08 12:26:41] ✔ 2402 registros migrados en ir2014
+[2025-10-08 12:26:41] ➡ Migrando tabla: ir2015
+[2025-10-08 12:26:41] ✔ 762 registros migrados en ir2015
+[2025-10-08 12:26:41] ➡ Migrando tabla: ir2016
+[2025-10-08 12:26:42] ✔ 585 registros migrados en ir2016
+[2025-10-08 12:26:42] ➡ Migrando tabla: ir2017
+[2025-10-08 12:26:42] ✔ 584 registros migrados en ir2017
+[2025-10-08 12:26:42] ➡ Migrando tabla: ir2018
+[2025-10-08 12:26:42] ✔ 855 registros migrados en ir2018
+[2025-10-08 12:26:42] ➡ Migrando tabla: karcli
+[2025-10-08 12:26:42] ✔ 54 registros migrados en karcli
+[2025-10-08 12:26:42] ➡ Migrando tabla: repexe
+[2025-10-08 12:26:42] ✔ 49 registros migrados en repexe
+[2025-10-08 12:26:42] ➡ Migrando tabla: repo
+[2025-10-08 12:26:42] ✔ 7 registros migrados en repo
+[2025-10-08 12:26:42] ➡ Migrando tabla: reporte
+[2025-10-08 12:26:42] ✔ 26 registros migrados en reporte
+[2025-10-08 12:26:42] ➡ Migrando tabla: rescon
+[2025-10-08 12:26:42] ✔ 197 registros migrados en rescon
+[2025-10-08 12:26:42] ➡ Migrando tabla: rfcontrl
+[2025-10-08 12:26:42] ✔ 1 registros migrados en rfcontrl
+[2025-10-08 12:26:42] ➡ Migrando tabla: rffactur
+[2025-10-08 12:27:00] ✔ 138774 registros migrados en rffactur
+[2025-10-08 12:27:00] ➡ Migrando tabla: rfobras
+[2025-10-08 12:27:00] ✔ 442 registros migrados en rfobras
+[2025-10-08 12:27:00] ➡ Migrando tabla: rfprovee
+[2025-10-08 12:27:00] ✔ 1629 registros migrados en rfprovee
+[2025-10-08 12:27:00] ➡ Migrando tabla: rpcontrl
+[2025-10-08 12:27:00] ✔ 1 registros migrados en rpcontrl
+[2025-10-08 12:27:00] ➡ Migrando tabla: rpemplea
+[2025-10-08 12:27:00] ✔ 0 registros migrados en rpemplea
+[2025-10-08 12:27:00] ➡ Migrando tabla: rpempxml
+[2025-10-08 12:27:00] ✔ 0 registros migrados en rpempxml
+[2025-10-08 12:27:00] ➡ Migrando tabla: rpenlcon
+[2025-10-08 12:27:00] ✔ 6 registros migrados en rpenlcon
+[2025-10-08 12:27:00] ➡ Migrando tabla: rpfichas
+[2025-10-08 12:27:01] ✔ 11020 registros migrados en rpfichas
+[2025-10-08 12:27:01] ➡ Migrando tabla: rpimpues
+[2025-10-08 12:27:01] ✔ 0 registros migrados en rpimpues
+[2025-10-08 12:27:01] ➡ Migrando tabla: subcon
+[2025-10-08 12:27:01] ✔ 6 registros migrados en subcon
+[2025-10-08 12:27:01] ➡ Migrando tabla: tempo
+[2025-10-08 12:27:01] ✔ 1066 registros migrados en tempo
+[2025-10-08 12:27:01] ➡ Migrando tabla: trans
+[2025-10-08 12:27:11] ✔ 97997 registros migrados en trans
+[2025-10-08 12:27:11] ➡ Migrando tabla: uacontrl
+[2025-10-08 12:27:11] ✔ 1 registros migrados en uacontrl
+[2025-10-08 12:27:11] ➡ Migrando tabla: uafactur
+[2025-10-08 12:27:11] ✔ 0 registros migrados en uafactur
+[2025-10-08 12:27:11] ✅ Migración completada exitosamente.
+[2025-10-08 12:29:07] 🚀 Iniciando migración...
+[2025-10-08 12:29:07] 🦊 Migrador FoxPro (.dbf) → PostgreSQL
+[2025-10-08 12:29:07] Conectado a ERP en localhost
+[2025-10-08 12:29:07] ➡ Migrando tabla: anulados
+[2025-10-08 12:29:07] ✔ 1 registros migrados en anulados
+[2025-10-08 12:29:07] ➡ Migrando tabla: borrar
+[2025-10-08 12:29:07] ✔ 1 registros migrados en borrar
+[2025-10-08 12:29:07] ➡ Migrando tabla: bpbancos
+[2025-10-08 12:29:07] ✔ 13 registros migrados en bpbancos
+[2025-10-08 12:29:07] ➡ Migrando tabla: bpcabcon
+[2025-10-08 12:29:07] ✔ 965 registros migrados en bpcabcon
+[2025-10-08 12:29:07] ➡ Migrando tabla: bpcabliq
+[2025-10-08 12:29:07] ✔ 0 registros migrados en bpcabliq
+[2025-10-08 12:29:07] ➡ Migrando tabla: bpcabotr
+[2025-10-08 12:29:07] ✔ 237 registros migrados en bpcabotr
+[2025-10-08 12:29:07] ➡ Migrando tabla: bpcobros
+[2025-10-08 12:29:07] ✔ 1013 registros migrados en bpcobros
+[2025-10-08 12:29:07] ➡ Migrando tabla: bpcompro
+[2025-10-08 12:29:07] ✔ 986 registros migrados en bpcompro
+[2025-10-08 12:29:07] ➡ Migrando tabla: bpcontra
+[2025-10-08 12:29:07] ✔ 1325 registros migrados en bpcontra
+[2025-10-08 12:29:07] ➡ Migrando tabla: bpcontrl
+[2025-10-08 12:29:07] ✔ 1 registros migrados en bpcontrl
+[2025-10-08 12:29:07] ➡ Migrando tabla: bpdetcon
+[2025-10-08 12:29:10] ✔ 41813 registros migrados en bpdetcon
+[2025-10-08 12:29:10] ➡ Migrando tabla: bpdetdir
+[2025-10-08 12:29:10] ✔ 0 registros migrados en bpdetdir
+[2025-10-08 12:29:10] ➡ Migrando tabla: bpdetfon
+[2025-10-08 12:29:10] ✔ 6 registros migrados en bpdetfon
+[2025-10-08 12:29:10] ➡ Migrando tabla: bpdetliq
+[2025-10-08 12:29:10] ✔ 0 registros migrados en bpdetliq
+[2025-10-08 12:29:10] ➡ Migrando tabla: bpdetmov
+[2025-10-08 12:29:12] ✔ 21805 registros migrados en bpdetmov
+[2025-10-08 12:29:12] ➡ Migrando tabla: bpdetotr
+[2025-10-08 12:29:12] ✔ 249 registros migrados en bpdetotr
+[2025-10-08 12:29:12] ➡ Migrando tabla: bpdetret
+[2025-10-08 12:29:13] ✔ 10533 registros migrados en bpdetret
+[2025-10-08 12:29:13] ➡ Migrando tabla: bpdetter
+[2025-10-08 12:29:14] ❌ Error en bpdetter: could not convert string to float: b'5.40601I R3P0'
+[2025-10-08 12:29:14] ➡ Migrando tabla: bpenvios
+[2025-10-08 12:29:14] ✔ 87 registros migrados en bpenvios
+[2025-10-08 12:29:14] ➡ Migrando tabla: bpfaccon
+[2025-10-08 12:29:14] ✔ 3997 registros migrados en bpfaccon
+[2025-10-08 12:29:14] ➡ Migrando tabla: bpfacobr
+[2025-10-08 12:29:14] ✔ 40 registros migrados en bpfacobr
+[2025-10-08 12:29:14] ➡ Migrando tabla: bpfactur
+[2025-10-08 12:29:19] ✔ 19553 registros migrados en bpfactur
+[2025-10-08 12:29:19] ➡ Migrando tabla: bpmovimi
+[2025-10-08 12:29:27] ✔ 55404 registros migrados en bpmovimi
+[2025-10-08 12:29:27] ➡ Migrando tabla: bpotprov
+[2025-10-08 12:29:27] ✔ 2709 registros migrados en bpotprov
+[2025-10-08 12:29:27] ➡ Migrando tabla: bppagdir
+[2025-10-08 12:29:27] ✔ 2 registros migrados en bppagdir
+[2025-10-08 12:29:27] ➡ Migrando tabla: bppercon
+[2025-10-08 12:29:27] ✔ 262 registros migrados en bppercon
+[2025-10-08 12:29:27] ➡ Migrando tabla: bpprovee
+[2025-10-08 12:29:28] ✔ 1767 registros migrados en bpprovee
+[2025-10-08 12:29:28] ➡ Migrando tabla: bpretenc
+[2025-10-08 12:29:28] ✔ 0 registros migrados en bpretenc
+[2025-10-08 12:29:28] ➡ Migrando tabla: bpretsri
+[2025-10-08 12:29:29] ✔ 7451 registros migrados en bpretsri
+[2025-10-08 12:29:29] ➡ Migrando tabla: bpretter
+[2025-10-08 12:29:32] ✔ 14319 registros migrados en bpretter
+[2025-10-08 12:29:32] ➡ Migrando tabla: bprtcero
+[2025-10-08 12:29:32] ✔ 3728 registros migrados en bprtcero
+[2025-10-08 12:29:32] ➡ Migrando tabla: bpsubcon
+[2025-10-08 12:29:33] ✔ 2476 registros migrados en bpsubcon
+[2025-10-08 12:29:33] ➡ Migrando tabla: cero
+[2025-10-08 12:29:33] ✔ 15 registros migrados en cero
+[2025-10-08 12:29:33] ➡ Migrando tabla: cgcabrep
+[2025-10-08 12:29:33] ✔ 1627 registros migrados en cgcabrep
+[2025-10-08 12:29:33] ➡ Migrando tabla: cgcatalo
+[2025-10-08 12:29:34] ✔ 7020 registros migrados en cgcatalo
+[2025-10-08 12:29:34] ➡ Migrando tabla: cgcentro
+[2025-10-08 12:29:38] ✔ 31069 registros migrados en cgcentro
+[2025-10-08 12:29:38] ➡ Migrando tabla: cgcompro
+[2025-10-08 12:29:44] ✔ 66986 registros migrados en cgcompro
+[2025-10-08 12:29:44] ➡ Migrando tabla: cgcontrl
+[2025-10-08 12:29:44] ✔ 1 registros migrados en cgcontrl
+[2025-10-08 12:29:44] ➡ Migrando tabla: cgctaaux
+[2025-10-08 12:29:44] ✔ 2158 registros migrados en cgctaaux
+[2025-10-08 12:29:44] ➡ Migrando tabla: cgdetrep
+[2025-10-08 12:29:44] ✔ 7871 registros migrados en cgdetrep
+[2025-10-08 12:29:44] ➡ Migrando tabla: cgdisrep
+[2025-10-08 12:29:44] ✔ 1059 registros migrados en cgdisrep
+[2025-10-08 12:29:44] ➡ Migrando tabla: cgrepmov
+[2025-10-08 12:29:44] ✔ 200 registros migrados en cgrepmov
+[2025-10-08 12:29:44] ➡ Migrando tabla: cgreposi
+[2025-10-08 12:29:45] ✔ 3788 registros migrados en cgreposi
+[2025-10-08 12:29:45] ➡ Migrando tabla: cgreptit
+[2025-10-08 12:29:45] ✔ 42 registros migrados en cgreptit
+[2025-10-08 12:29:45] ➡ Migrando tabla: cgsaldos
+[2025-10-08 12:29:47] ✔ 33822 registros migrados en cgsaldos
+[2025-10-08 12:29:47] ➡ Migrando tabla: cgvalpag
+[2025-10-08 12:29:47] ✔ 6 registros migrados en cgvalpag
+[2025-10-08 12:29:47] ➡ Migrando tabla: creditos
+[2025-10-08 12:29:47] ✔ 0 registros migrados en creditos
+[2025-10-08 12:29:47] ➡ Migrando tabla: deposito
+[2025-10-08 12:29:47] ✔ 33 registros migrados en deposito
+[2025-10-08 12:29:47] ➡ Migrando tabla: dettem
+[2025-10-08 12:29:47] ✔ 57 registros migrados en dettem
+[2025-10-08 12:29:47] ➡ Migrando tabla: fac_alra
+[2025-10-08 12:29:47] ✔ 8 registros migrados en fac_alra
+[2025-10-08 12:29:47] ➡ Migrando tabla: fccheque
+[2025-10-08 12:29:47] ✔ 0 registros migrados en fccheque
+[2025-10-08 12:29:47] ➡ Migrando tabla: fcclient
+[2025-10-08 12:29:47] ✔ 83 registros migrados en fcclient
+[2025-10-08 12:29:47] ➡ Migrando tabla: fccontrl
+[2025-10-08 12:29:47] ✔ 1 registros migrados en fccontrl
+[2025-10-08 12:29:47] ➡ Migrando tabla: fcdetdoc
+[2025-10-08 12:29:51] ✔ 28413 registros migrados en fcdetdoc
+[2025-10-08 12:29:51] ➡ Migrando tabla: fcdochis
+[2025-10-08 12:29:51] ✔ 0 registros migrados en fcdochis
+[2025-10-08 12:29:51] ➡ Migrando tabla: fcdocume
+[2025-10-08 12:29:56] ✔ 28465 registros migrados en fcdocume
+[2025-10-08 12:29:56] ➡ Migrando tabla: fcmovhis
+[2025-10-08 12:29:56] ✔ 0 registros migrados en fcmovhis
+[2025-10-08 12:29:56] ➡ Migrando tabla: fcmovinv
+[2025-10-08 12:30:00] ✔ 31841 registros migrados en fcmovinv
+[2025-10-08 12:30:00] ➡ Migrando tabla: fcmovrem
+[2025-10-08 12:30:00] ✔ 862 registros migrados en fcmovrem
+[2025-10-08 12:30:00] ➡ Migrando tabla: fcproduc
+[2025-10-08 12:30:00] ✔ 46 registros migrados en fcproduc
+[2025-10-08 12:30:00] ➡ Migrando tabla: fcresvta
+[2025-10-08 12:30:00] ✔ 8337 registros migrados en fcresvta
+[2025-10-08 12:30:00] ➡ Migrando tabla: fcretcli
+[2025-10-08 12:30:02] ✔ 21921 registros migrados en fcretcli
+[2025-10-08 12:30:02] ➡ Migrando tabla: fcsalcli
+[2025-10-08 12:30:02] ✔ 745 registros migrados en fcsalcli
+[2025-10-08 12:30:02] ➡ Migrando tabla: fctablas
+[2025-10-08 12:30:02] ✔ 71 registros migrados en fctablas
+[2025-10-08 12:30:02] ➡ Migrando tabla: fcvended
+[2025-10-08 12:30:02] ✔ 0 registros migrados en fcvended
+[2025-10-08 12:30:02] ➡ Migrando tabla: ir2007
+[2025-10-08 12:30:02] ✔ 390 registros migrados en ir2007
+[2025-10-08 12:30:02] ➡ Migrando tabla: ir2008
+[2025-10-08 12:30:02] ✔ 88 registros migrados en ir2008
+[2025-10-08 12:30:02] ➡ Migrando tabla: ir2009
+[2025-10-08 12:30:02] ✔ 24 registros migrados en ir2009
+[2025-10-08 12:30:02] ➡ Migrando tabla: karcli
+[2025-10-08 12:30:02] ✔ 373 registros migrados en karcli
+[2025-10-08 12:30:02] ➡ Migrando tabla: repexe
+[2025-10-08 12:30:02] ✔ 7 registros migrados en repexe
+[2025-10-08 12:30:02] ➡ Migrando tabla: repo
+[2025-10-08 12:30:03] ✔ 4 registros migrados en repo
+[2025-10-08 12:30:03] ➡ Migrando tabla: reporte
+[2025-10-08 12:30:03] ✔ 1 registros migrados en reporte
+[2025-10-08 12:30:03] ➡ Migrando tabla: rfcontrl
+[2025-10-08 12:30:03] ✔ 1 registros migrados en rfcontrl
+[2025-10-08 12:30:03] ➡ Migrando tabla: rffactur
+[2025-10-08 12:30:03] ✔ 4315 registros migrados en rffactur
+[2025-10-08 12:30:03] ➡ Migrando tabla: rfobras
+[2025-10-08 12:30:03] ✔ 27 registros migrados en rfobras
+[2025-10-08 12:30:03] ➡ Migrando tabla: rfprovee
+[2025-10-08 12:30:03] ✔ 1070 registros migrados en rfprovee
+[2025-10-08 12:30:03] ➡ Migrando tabla: rpcontrl
+[2025-10-08 12:30:03] ✔ 1 registros migrados en rpcontrl
+[2025-10-08 12:30:03] ➡ Migrando tabla: rpemplea
+[2025-10-08 12:30:03] ✔ 0 registros migrados en rpemplea
+[2025-10-08 12:30:03] ➡ Migrando tabla: rpempxml
+[2025-10-08 12:30:03] ✔ 0 registros migrados en rpempxml
+[2025-10-08 12:30:03] ➡ Migrando tabla: rpenlcon
+[2025-10-08 12:30:03] ✔ 3 registros migrados en rpenlcon
+[2025-10-08 12:30:03] ➡ Migrando tabla: rpfichas
+[2025-10-08 12:30:03] ✔ 1337 registros migrados en rpfichas
+[2025-10-08 12:30:03] ➡ Migrando tabla: rpimpues
+[2025-10-08 12:30:03] ✔ 0 registros migrados en rpimpues
+[2025-10-08 12:30:03] ➡ Migrando tabla: subcon
+[2025-10-08 12:30:03] ✔ 1 registros migrados en subcon
+[2025-10-08 12:30:03] ➡ Migrando tabla: tempo
+[2025-10-08 12:30:03] ✔ 0 registros migrados en tempo
+[2025-10-08 12:30:03] ➡ Migrando tabla: trans
+[2025-10-08 12:30:03] ✔ 216 registros migrados en trans
+[2025-10-08 12:30:03] ➡ Migrando tabla: uacontrl
+[2025-10-08 12:30:03] ✔ 1 registros migrados en uacontrl
+[2025-10-08 12:30:03] ➡ Migrando tabla: uafactur
+[2025-10-08 12:30:03] ✔ 0 registros migrados en uafactur
+[2025-10-08 12:30:03] ✅ Migración completada exitosamente.
+[2025-10-08 14:01:23] 🚀 Iniciando migración...
+[2025-10-08 14:01:23] Conectado a la base Prueba en localhost usando el esquema '1'
+[2025-10-08 14:01:23] 🦊 Migrador FoxPro (.dbf) → PostgreSQL
+[2025-10-08 14:01:23] ➡ Migrando tabla: bpdetmov
+[2025-10-08 14:01:25] ✔ 21805 registros migrados en bpdetmov
+[2025-10-08 14:01:25] ✅ Migración completada exitosamente.
+[2025-10-08 14:07:07] 🚀 Iniciando migración...
+[2025-10-08 14:07:08] Conectado a la base ERP en localhost usando el esquema '1'
+[2025-10-08 14:07:08] 🦊 Migrador FoxPro (.dbf) → PostgreSQL
+[2025-10-08 14:07:08] ➡ Migrando tabla: bpdetmov
+[2025-10-08 14:07:10] ✔ 21805 registros migrados en bpdetmov
+[2025-10-08 14:07:10] ✅ Migración completada exitosamente.

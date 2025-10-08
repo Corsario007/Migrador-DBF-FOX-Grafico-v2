@@ -16,6 +16,25 @@ def write_log(message):
         f.write(timestamp + message + "\n")
 
 # ==================================================
+# FUNCIÓN PARA SANITIZAR VALORES
+# ==================================================
+def sanitize_value(val):
+    if isinstance(val, bytes):
+        try:
+            decoded = val.decode('latin1').strip()
+            return decoded if decoded else None
+        except:
+            return None
+    elif isinstance(val, str):
+        return val.strip()
+    elif isinstance(val, (int, float, bool)):
+        return val
+    elif val is None:
+        return None
+    else:
+        return str(val)
+
+# ==================================================
 # FUNCIÓN DE MIGRACIÓN
 # ==================================================
 def migrate_dbf_to_postgres(config, schema, folder, log_widget):
@@ -27,11 +46,11 @@ def migrate_dbf_to_postgres(config, schema, folder, log_widget):
         cur.execute(f'CREATE SCHEMA IF NOT EXISTS "{schema}";')
         conn.commit()
 
-        msg = "🦊 Migrador FoxPro (.dbf) → PostgreSQL"
+        msg = f"Conectado a la base {config['dbname']} en {config['host']} usando el esquema '{schema}'"
         log_widget.insert(tk.END, msg + "\n\n")
         write_log(msg)
 
-        msg = f"Conectado a {config['dbname']} en {config['host']}"
+        msg = "🦊 Migrador FoxPro (.dbf) → PostgreSQL"
         log_widget.insert(tk.END, msg + "\n\n")
         write_log(msg)
 
@@ -66,14 +85,23 @@ def migrate_dbf_to_postgres(config, schema, folder, log_widget):
                     cur.execute(create_sql)
                     conn.commit()
 
-                    # Insertar registros
+                    # Insertar registros con validación
                     count = 0
                     for record in tqdm(dbf, desc=f"{table_name}", unit="reg"):
-                        cols = ', '.join(f'"{k.lower()}"' for k in record.keys())
-                        vals = ', '.join(["%s"] * len(record))
-                        sql = f'INSERT INTO {full_table_name} ({cols}) VALUES ({vals})'
-                        cur.execute(sql, list(record.values()))
-                        count += 1
+                        try:
+                            cols = ', '.join(f'"{k.lower()}"' for k in record.keys())
+                            vals = ', '.join(["%s"] * len(record))
+                            sql = f'INSERT INTO {full_table_name} ({cols}) VALUES ({vals})'
+                            sanitized_values = [sanitize_value(v) for v in record.values()]
+                            cur.execute(sql, sanitized_values)
+                            count += 1
+                        except Exception as e:
+                            msg = f"❌ Error al insertar en {table_name}: {e}\nRegistro: {record}"
+                            log_widget.insert(tk.END, msg + "\n")
+                            log_widget.see(tk.END)
+                            log_widget.update()
+                            write_log(msg)
+                            conn.rollback()
 
                     conn.commit()
                     msg = f"✔ {count} registros migrados en {table_name}"
@@ -195,7 +223,7 @@ def show_splash():
     splash.configure(bg="#2C3E50")
 
     try:
-        frame = tk.Frame(splash, bg="white", padx=20, pady=20)
+        frame = tk.Frame(splash, bg="white", padx=20,pady=20)
         frame.pack(expand=True)
 
         img = tk.PhotoImage(file="LogoApp.png")
