@@ -109,8 +109,8 @@ def migrate_dbf_to_postgres(config, folder, log_widget):
 def start_gui():
     root = tk.Tk()
     root.title("Migrador FoxPro → PostgreSQL")
-    root.geometry("640x480")
-    root.resizable(True, True)
+    root.geometry("960x540")
+    root.resizable(False, False)
 
     # Campos de conexión
     frame_conn = tk.LabelFrame(root, text="Conexión PostgreSQL", padx=10, pady=10)
@@ -159,7 +159,7 @@ def start_gui():
     tk.Button(frame_folder, text="Seleccionar...", command=choose_folder).pack(side="left")
 
     # Área de log
-    log_widget = scrolledtext.ScrolledText(root, width=75, height=15, state="normal")
+    log_widget = scrolledtext.ScrolledText(root, width=125, height=15, state="normal")
     log_widget.pack(padx=10, pady=10)
 
     # Botón de migrar
@@ -192,7 +192,7 @@ def start_gui():
 def show_splash():
     splash = tk.Tk()
     splash.overrideredirect(True)
-    splash.geometry("400x300+500+250")
+    splash.geometry("640x480+500+250")
     splash.configure(bg="#2C3E50")
 
     try:
@@ -208,7 +208,7 @@ def show_splash():
         tk.Label(splash, text="Migrador FoxPro → PostgreSQL", font=("Arial", 16)).pack(pady=80)
 
     tk.Label(splash, text="Cargando aplicación...", font=("Arial", 12)).pack(pady=10)
-    splash.after(2500, lambda: [splash.destroy(), start_gui()])
+    splash.after(2000, lambda: [splash.destroy(), start_gui()])
     splash.mainloop()
 
 # ==================================================
