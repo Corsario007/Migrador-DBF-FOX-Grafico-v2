@@ -1,0 +1,8 @@
+[2025-10-08 10:24:10] 🚀 Iniciando migración...
+[2025-10-08 10:24:10] ❌ No se pudo conectar a PostgreSQL:
+invalid dsn: invalid connection option "schema"
+
+[2025-10-08 10:24:51] 🚀 Iniciando migración...
+[2025-10-08 10:24:51] ❌ No se pudo conectar a PostgreSQL:
+invalid dsn: invalid connection option "schema"
+
